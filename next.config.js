@@ -9,7 +9,8 @@ const nextConfig = withMDX({
     images: {
         unoptimized: true
     },
-    pageExtensions: ['js', 'jsx', 'mdx']
+    pageExtensions: ['ts', 'tsx', 'mdx'],
+
 })
 
 module.exports = nextConfig
