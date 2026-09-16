@@ -20,8 +20,11 @@ export default function ThemeToggle() {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
+        // Lit le thème déjà appliqué par le script inline du layout (pattern hydration-safe).
+        /* eslint-disable react-hooks/set-state-in-effect */
         setDark(document.documentElement.classList.contains("dark"));
         setMounted(true);
+        /* eslint-enable react-hooks/set-state-in-effect */
     }, []);
 
     function toggle() {
