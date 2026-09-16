@@ -11,7 +11,7 @@ export const metadata = {
 
 ## Voir en ligne
 
-- **Application** : [stockflow.mouctar.dev](https://stockflow.mouctar.dev)
+- **Application** : [preview.stockflow.mouctar.dev](https://preview.stockflow.mouctar.dev)
 
 ## Aperçu
 
@@ -27,18 +27,16 @@ Au-delà des fonctionnalités, le projet est un terrain d'expérimentation **Dev
 - **Ventes** : enregistrement des ventes.
 - **Retours** : traitement des retours.
 
-{/* Complète avec les détails que tu veux mettre en avant : rôles/permissions, tableaux de bord, alertes de rupture, historique, exports, etc. */}
 
 ## Architecture technique
 
-- **API** : Express (Node.js), API REST.
+- **API** : Express (Node.js), API REST, documentation via Swagger ui.
 - **Base de données** : PostgreSQL.
 - **Conteneurisation** : Docker (docker compose) pour l'ensemble des services.
-- **Hébergement** : VPS Hostinger.
 - **Reverse proxy** : Nginx Proxy Manager (NPM) — routage, TLS/HTTPS.
 - **Authentification & autorisation** : Authelia.
 
-## Sécurité : forward auth avec Authelia
+## Sécurité : forward auth avec Authelia utilisateur sur LDAP
 
 L'accès à l'application est protégé par un mécanisme de **forward authentication** : Nginx Proxy Manager ne sert jamais directement l'application sans validation. À chaque requête, NPM interroge **Authelia** pour vérifier que l'utilisateur est authentifié et autorisé ; ce n'est qu'après accord d'Authelia que la requête atteint l'API.
 

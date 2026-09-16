@@ -6,7 +6,9 @@ export const experiences = [
         period: "nov. 2022 – juil. 2023",
         points: [
             "Développement et intégration des systèmes de paiement mobile money (Orange Money, Wave) au contrôleur UCOPIA (WebLib) : architecture, backend, tests et déploiement.",
-            "Coordination de l'équipe de développement via Jira en mode Agile : définition des tâches, sprints et revue de code.",
+            "Participer à l'analyse et à la resolution de problème remonter par l'équipe support du produit UCOPIA, nottament sur un " +
+            "bug concernant la configuration de plusieurs réseau.",
+            //"Coordination de l'équipe de développement via Jira en mode Agile : définition des tâches, sprints et revue de code.",
             "Rédaction et exécution des plans de test pour valider les versions 6.0.12 et 7.0.1 du logiciel UCOPIA.",
         ],
     },

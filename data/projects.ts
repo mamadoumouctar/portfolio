@@ -7,11 +7,11 @@ export const projects = [
         period: "2026",
         points: [
             "Application de gestion de stock multi-points : produits, stock, transferts entre points de vente, ventes et retours.",
-            "API Express + PostgreSQL conteneurisée avec Docker sur un VPS Hostinger, derrière Nginx Proxy Manager avec Authelia en forward auth (authentification et autorisation centralisées).",
+            "API Express + PostgreSQL conteneurisée avec Docker, derrière Nginx Proxy Manager avec Authelia en forward auth (authentification et autorisation centralisées).",
         ],
         tags: ["Express", "PostgreSQL", "Docker", "Authelia", "Nginx Proxy Manager"],
         link: "",
-        demo: "https://stockflow.mouctar.dev",
+        demo: "https://preview.stockflow.mouctar.dev",
     },
     {
         slug: "ugram",
