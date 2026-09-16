@@ -1,0 +1,52 @@
+export const metadata = {
+  title: 'Floppa — Mamadou Mouctar Diallo',
+  description: "Marketplace de vente de produits en Java 21, centrée sur la qualité logicielle et les pratiques Agile (GLO-2003, Université Laval).",
+}
+
+# Floppa
+
+**Marketplace de vente de produits, axée qualité logicielle** · Projet de session — GLO-2003, Université Laval · Équipe de 5 · Hiver 2026
+
+`Java 21` · `Maven` · `Jersey` · `MongoDB` · `GitHub Actions` · `SonarCloud`
+
+## Code source
+
+- **Dépôt GitHub** : [github.com/Floppa-H26-Team23/floppa](https://github.com/Floppa-H26-Team23/floppa)
+
+## Aperçu
+
+Floppa est une solution de vente en ligne qui met en relation une personne souhaitant **vendre** un produit avec des **acheteurs** potentiels. Réalisé en équipe dans le cadre du cours de génie logiciel, le projet met autant l'accent sur le produit que sur la **rigueur du processus de développement** : pratiques Agile, code propre et outillage qualité automatisé.
+
+{/* Contribution personnelle : précise ici ce que TU as réalisé dans l'équipe. */}
+
+## Fonctionnalités
+
+- Mise en relation vendeurs / acheteurs pour la vente de produits.
+- Ajout de produits à la plateforme par les vendeurs.
+
+{/* Complète avec les autres fonctionnalités : recherche, panier, gestion des commandes, etc. */}
+
+## Architecture technique
+
+- **Langage & build** : Java 21, Maven 3.x
+- **API** : Jersey (services REST / appels HTTP)
+- **Persistance configurable** : stockage **in-memory** ou **MongoDB**, sélectionné via la propriété `persistence` (`inmemory` / `mongo`)
+- **Conteneurisation** : Docker (`docker compose up`)
+
+Cette persistance interchangeable illustre une conception découplée : la logique métier ne dépend pas d'une base de données précise, ce qui facilite les tests et l'évolution.
+
+## Démarche qualité & CI/CD
+
+- **Intégration continue** via **GitHub Actions** : exécution automatique des tests à chaque contribution.
+- **Quality gate SonarCloud** : analyse statique, suivi de la **couverture de code** et détection des bugs.
+- **OWASP Dependency Check** : analyse automatique des vulnérabilités des dépendances.
+- **Pratiques Agile** : sprints, revues de code et rétrospectives, dans une logique de **Clean Code**.
+
+## Repères du projet
+
+- ~148 commits, contributions gérées par pull requests et revue de code.
+- Gouvernance du dépôt : `CONTRIBUTING.md`, code de conduite, licence **GNU GPLv3**.
+
+## Ce que j'en retiens
+
+{/* À compléter : l'apport de SonarCloud / du CI sur la qualité, ou un défi d'architecture (ex. la persistance interchangeable). */}

@@ -1,0 +1,56 @@
+export const metadata = {
+  title: 'StockFlow — Mamadou Mouctar Diallo',
+  description: "Système de gestion de stock multi-points (produits, transferts, ventes, retours), API Express + PostgreSQL déployée avec Docker, Authelia et Nginx Proxy Manager.",
+}
+
+# StockFlow
+
+**Système de gestion de stock multi-points** · Projet personnel · Déployé en production · 2026
+
+`Express` · `PostgreSQL` · `Docker` · `Authelia` · `Nginx Proxy Manager`
+
+## Voir en ligne
+
+- **Application** : [stockflow.mouctar.dev](https://stockflow.mouctar.dev)
+
+## Aperçu
+
+StockFlow est une application personnelle de **gestion de stock répartie sur plusieurs points** (points de vente ou emplacements). Elle couvre l'ensemble du cycle : catalogue de produits, niveaux de stock, transferts entre points, ventes et retours. L'interface web est pensée **mobile-first** (installable comme application web).
+
+Au-delà des fonctionnalités, le projet est un terrain d'expérimentation **DevOps** complet : conteneurisation, hébergement sur VPS, reverse proxy et authentification centralisée.
+
+## Fonctionnalités
+
+- **Produits** : gestion du catalogue de produits.
+- **Stock** : suivi des niveaux de stock par point.
+- **Transferts** : déplacement de stock entre points.
+- **Ventes** : enregistrement des ventes.
+- **Retours** : traitement des retours.
+
+{/* Complète avec les détails que tu veux mettre en avant : rôles/permissions, tableaux de bord, alertes de rupture, historique, exports, etc. */}
+
+## Architecture technique
+
+- **API** : Express (Node.js), API REST.
+- **Base de données** : PostgreSQL.
+- **Conteneurisation** : Docker (docker compose) pour l'ensemble des services.
+- **Hébergement** : VPS Hostinger.
+- **Reverse proxy** : Nginx Proxy Manager (NPM) — routage, TLS/HTTPS.
+- **Authentification & autorisation** : Authelia.
+
+## Sécurité : forward auth avec Authelia
+
+L'accès à l'application est protégé par un mécanisme de **forward authentication** : Nginx Proxy Manager ne sert jamais directement l'application sans validation. À chaque requête, NPM interroge **Authelia** pour vérifier que l'utilisateur est authentifié et autorisé ; ce n'est qu'après accord d'Authelia que la requête atteint l'API.
+
+```text
+Utilisateur → Nginx Proxy Manager → (forward auth) → Authelia
+                     │  autorisé ✓
+                     ▼
+              API Express + PostgreSQL
+```
+
+Cette approche centralise l'authentification (SSO) et l'autorisation en dehors du code applicatif : l'API n'a pas à gérer elle-même les sessions et les règles d'accès, ce qui renforce la sécurité et simplifie la maintenance.
+
+## Ce que j'en retiens
+
+{/* À compléter : ce que tu as appris (mise en place d'Authelia, TLS, docker compose en prod, sauvegardes PostgreSQL, etc.). */}

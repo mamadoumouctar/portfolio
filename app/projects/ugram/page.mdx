@@ -1,0 +1,66 @@
+export const metadata = {
+  title: 'uGram — Mamadou Mouctar Diallo',
+  description: "Réseau social de partage de photos inspiré d'Instagram — Développement Web Avancé, Université Laval (Hiver 2026).",
+}
+
+# uGram
+
+**Réseau social de partage de photos inspiré d'Instagram** · Développement Web Avancé, Université Laval · Équipe de 5 · Hiver 2026
+
+`React` · `Express` · `Prisma` · `PostgreSQL` · `Socket.io` · `AWS`
+
+## Voir en ligne
+
+- **Application** : [ugram.i-maths.net](https://ugram.i-maths.net)
+- **API backend** : [backend.ugram.i-maths.net](https://backend.ugram.i-maths.net)
+- **Documentation API (Swagger / OpenAPI)** : [backend.ugram.i-maths.net/api/docs](https://backend.ugram.i-maths.net/api/docs)
+
+## Aperçu
+
+Application web complète de type réseau social, développée en équipe de 5 dans le cadre du cours de Développement Web Avancé. Le projet couvre l'ensemble de la chaîne, du front-end à la mise en production sur AWS, avec un fort accent sur l'**interactivité**, la **performance**, la **sécurité** et l'**observabilité**.
+
+{/* Contribution personnelle : précise ici ce que TU as réalisé dans l'équipe. */}
+
+## Fonctionnalités
+
+- **Interactions** : réactions (Like, Love, Wow, Fire) et commentaires sur les publications des autres usagers.
+- **Notifications temps réel** : consultation des réactions/commentaires et notifications instantanées lors des interactions.
+- **Traitement d'images** : redimensionnement automatique des images téléversées en plusieurs formats optimisés.
+- **Sécurité de l'API** : validation Zod, requêtes paramétrées Prisma, en-têtes Helmet et rate limiting.
+- **Documentation dynamique** : API documentée de façon interactive via Swagger.
+
+## Fonctionnalités avancées (21 points)
+
+- **Chat temps réel** entre deux usagers via WebSockets / Socket.io *(8 pts)*.
+- **Dessin sur la photo** au moment du téléversement *(5 pts)*.
+- **Capture par webcam** pour publier une photo directement *(5 pts)*.
+- **Message privé** à un usager depuis son profil *(3 pts)*.
+
+## Stack technique
+
+- **Front-end** : React, Vite, TypeScript, Tailwind CSS, Axios
+- **Back-end** : Express, TypeScript, Prisma, Multer, Zod
+- **Base de données** : PostgreSQL
+- **Temps réel** : Socket.io
+
+Le tout est organisé en **monorepo npm workspaces** (`frontend` / `backend`).
+
+## Architecture & déploiement
+
+Architecture hybride sur AWS :
+
+- **Front-end** : site statique hébergé sur **Amazon S3** (build Vite).
+- **Back-end** : API Express déployée sur **Amazon Elastic Beanstalk**.
+- **Livraison continue** : déploiement automatisé via **GitHub Actions** au push sur `main`.
+
+## Observabilité & analytique
+
+- **Sentry** (front + back) : suivi des erreurs, traces de performance (spans HTTP, middleware Express, opérations Prisma), logs structurés et métriques applicatives (`user.sign_in`, `comment.created`, `http.request.duration`).
+- **Amazon CloudWatch** : métriques agrégées dans le namespace `Ugram/API` — requêtes HTTP, erreurs 4xx/5xx, latence (globales et par endpoint), événements métier.
+- **Google Analytics 4** (gtag.js) : suivi des vues de page et d'événements personnalisés (`login`, `publish_image`, `toggle_like`, `add_comment`, `view_profile`, etc.).
+
+{/*
+Pour afficher des captures d'écran : dépose les images dans le dossier `public/`
+du portfolio (ex. public/ugram/swagger.png) puis référence-les ici :
+![Documentation Swagger](/ugram/swagger.png)
+*/}
