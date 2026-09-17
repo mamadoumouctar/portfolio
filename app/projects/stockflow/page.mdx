@@ -36,19 +36,4 @@ Au-delà des fonctionnalités, le projet est un terrain d'expérimentation **Dev
 - **Reverse proxy** : Nginx Proxy Manager (NPM) — routage, TLS/HTTPS.
 - **Authentification & autorisation** : Authelia.
 
-## Sécurité : forward auth avec Authelia utilisateur sur LDAP
-
-L'accès à l'application est protégé par un mécanisme de **forward authentication** : Nginx Proxy Manager ne sert jamais directement l'application sans validation. À chaque requête, NPM interroge **Authelia** pour vérifier que l'utilisateur est authentifié et autorisé ; ce n'est qu'après accord d'Authelia que la requête atteint l'API.
-
-```text
-Utilisateur → Nginx Proxy Manager → (forward auth) → Authelia
-                     │  autorisé ✓
-                     ▼
-              API Express + PostgreSQL
-```
-
 Cette approche centralise l'authentification (SSO) et l'autorisation en dehors du code applicatif : l'API n'a pas à gérer elle-même les sessions et les règles d'accès, ce qui renforce la sécurité et simplifie la maintenance.
-
-## Ce que j'en retiens
-
-{/* À compléter : ce que tu as appris (mise en place d'Authelia, TLS, docker compose en prod, sauvegardes PostgreSQL, etc.). */}
