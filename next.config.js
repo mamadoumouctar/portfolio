@@ -2,8 +2,7 @@ const withMDX = require('@next/mdx')({
     extension: /\.mdx$/
 })
 
-const isGitHubPages = process.env.GITHUB_ACTIONS === 'true'
-const repoBasePath = isGitHubPages ? '/' : ''
+const repoBasePath = ''
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withMDX({
