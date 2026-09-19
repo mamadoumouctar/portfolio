@@ -3,7 +3,7 @@ const withMDX = require('@next/mdx')({
 })
 
 const isGitHubPages = process.env.GITHUB_ACTIONS === 'true'
-const repoBasePath = isGitHubPages ? '/portfolio' : ''
+const repoBasePath = isGitHubPages ? '/' : ''
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withMDX({
